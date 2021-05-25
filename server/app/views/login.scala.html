@@ -1,0 +1,26 @@
+@* login1 Twirl Template file *@
+@(loginForm: Form[UserData], signupForm: Form[UserData])(implicit request: MessagesRequestHeader, flash: Flash)
+
+@main("Login") {
+    <h2>Login</h2>
+
+    @helper.form(action=routes.Application.validateLoginForm) {
+        @helper.CSRF.formField
+        @helper.inputText(loginForm("Username"), Symbol("id") -> "username-login", Symbol("size") -> 30)
+        @helper.inputText(loginForm("Password"), Symbol("id") -> "password-login", Symbol("size") -> 30)
+        <div class="form-action">
+            <button type="submit">Login</button>
+        </div>
+    }
+
+    <h2>Create User</h2>
+
+    @helper.form(action=routes.Application.createUserForm) {
+        @helper.CSRF.formField
+        @helper.inputText(signupForm("Username"), Symbol("id") -> "username-create", Symbol("size") -> 30)
+        @helper.inputPassword(signupForm("Password"), Symbol("id") -> "password-create", Symbol("size") -> 30)
+        <div class="form-action">
+            <button type="submit">Register</button>
+        </div>
+    }
+}
