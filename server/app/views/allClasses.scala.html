@@ -5,7 +5,7 @@
 @main("'s classes") {
 <ul>
     @for((classID, className) <- classes) {
-        <li><a href=@views.html.classPage(classID)</a></li>
+        <li><a href=@routes.Application.goToClass(classID)>@classID.toString: @className</a></li>
     }
 </ul>
 }
