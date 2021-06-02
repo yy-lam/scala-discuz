@@ -78,12 +78,15 @@ class Application @Inject()(val controllerComponents: MessagesControllerComponen
 
   def load = Action { implicit request =>
     request.session.get("username") match {
-      case Some(username: String) => Ok("Welcome to " + 15213.toString + "!")
+      case Some(username: String) => Ok(views.html.allClasses(username, InMemoryModel.getClasses(username)))
       case None => Redirect("login")
     }
   }
 
   def goToClass(classId: Int) = Action { implicit request =>
-    Ok("Welcome to " + classId.toString + "!")
+    request.session.get("username") match {
+      case Some(username: String) => Ok(views.html.classPage(classId))
+      case None => Redirect("login")
+    }
   }
 }

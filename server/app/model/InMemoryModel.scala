@@ -4,10 +4,12 @@ import scala.collection.mutable
 
 object InMemoryModel {
   private val users = mutable.Map[String, String]("admin" -> "password")
-  private val classes = mutable.Map[Int, String](
-    15213 -> "Introduction to Computer Systems",
-    105 -> "Programming Languages",
-    40 -> "Machine Structures"
+  private val classes = mutable.Map[String, mutable.Map[Int, String]](
+    "admin" -> mutable.Map[Int, String](
+      15213 -> "Introduction to Computer Systems",
+      105 -> "Programming Languages",
+      40 -> "Machine Structures"
+    )
   )
   private val posts = mutable.Map[Int, List[String]](15213 -> List("post 1", "post 2", "post 3"))
 
@@ -20,6 +22,9 @@ object InMemoryModel {
       users(username) = password
       true
     }
+
+  def getClasses(username: String): mutable.Map[Int, String] =
+    classes.get(username).getOrElse(mutable.Map[Int,String]())
 
   def getPost(classId: Int): Seq[String] =
     posts.get(classId).getOrElse(Nil)

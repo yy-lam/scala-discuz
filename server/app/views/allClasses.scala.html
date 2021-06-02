@@ -1,0 +1,11 @@
+@* allClasses Twirl Template file *@
+@import scala.collection.mutable.Map
+@(username: String, classes: scala.collection.mutable.Map[Int, String])(implicit flash: Flash)
+
+@main("'s classes") {
+<ul>
+    @for((classID, className) <- classes) {
+        <li><a href=@views.html.classPage(classID)</a></li>
+    }
+</ul>
+}
