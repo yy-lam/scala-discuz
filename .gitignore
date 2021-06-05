@@ -5,11 +5,11 @@ target
 tmp
 .history
 dist
-.idea
-.bsp
-.bloop
-.metals
-.vscode
+.idea/
+.bsp/
+.bloop/
+.metals/
+.vscode/
 *.iml
 /out
 .idea_modules
