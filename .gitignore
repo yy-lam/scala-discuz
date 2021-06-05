@@ -7,6 +7,9 @@ tmp
 dist
 .idea
 .bsp
+.bloop
+.metals
+.vscode
 *.iml
 /out
 .idea_modules
