@@ -1,0 +1,264 @@
+{
+    "version": "1.4.0",
+    "project": {
+        "name": "client-test",
+        "directory": "/Users/wade/Documents/CS/scala-discuz/play-scalajs/client",
+        "workspaceDir": "/Users/wade/Documents/CS/scala-discuz/play-scalajs",
+        "sources": [
+            "/Users/wade/Documents/CS/scala-discuz/play-scalajs/client/src/test/scala",
+            "/Users/wade/Documents/CS/scala-discuz/play-scalajs/client/src/test/scala-2.13",
+            "/Users/wade/Documents/CS/scala-discuz/play-scalajs/client/src/test/scala-2",
+            "/Users/wade/Documents/CS/scala-discuz/play-scalajs/client/src/test/java",
+            "/Users/wade/Documents/CS/scala-discuz/play-scalajs/client/target/scala-2.13/src_managed/test"
+        ],
+        "dependencies": [
+            "sharedJS",
+            "client"
+        ],
+        "classpath": [
+            "/Users/wade/Documents/CS/scala-discuz/play-scalajs/.bloop/client/scala-2.13/classes",
+            "/Users/wade/Documents/CS/scala-discuz/play-scalajs/.bloop/sharedJS/scala-2.13/classes",
+            "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.5/scala-library-2.13.5.jar",
+            "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-library_2.13/1.5.1/scalajs-library_2.13-1.5.1.jar",
+            "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-test-bridge_2.13/1.5.1/scalajs-test-bridge_2.13-1.5.1.jar",
+            "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-dom_sjs1_2.13/1.1.0/scalajs-dom_sjs1_2.13-1.1.0.jar",
+            "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.13/1.5.1/scalajs-test-interface_2.13-1.5.1.jar"
+        ],
+        "out": "/Users/wade/Documents/CS/scala-discuz/play-scalajs/.bloop/client",
+        "classesDir": "/Users/wade/Documents/CS/scala-discuz/play-scalajs/.bloop/client/scala-2.13/test-classes",
+        "resources": [
+            "/Users/wade/Documents/CS/scala-discuz/play-scalajs/client/src/test/resources",
+            "/Users/wade/Documents/CS/scala-discuz/play-scalajs/client/target/scala-2.13/resource_managed/test"
+        ],
+        "scala": {
+            "organization": "org.scala-lang",
+            "name": "scala-compiler",
+            "version": "2.13.5",
+            "options": [
+                "-Xplugin:/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.13.5/1.5.1/scalajs-compiler_2.13.5-1.5.1.jar",
+                "-P:scalajs:mapSourceURI:file:/Users/wade/Documents/CS/scala-discuz/play-scalajs/client/src/main/scala/->../scala/4a79c7/",
+                "-P:scalajs:mapSourceURI:file:/Users/wade/Documents/CS/scala-discuz/play-scalajs/client/src/main/scala/->../scala/4a79c7/"
+            ],
+            "jars": [
+                "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.5/scala-library-2.13.5.jar",
+                "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.5/scala-compiler-2.13.5.jar",
+                "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.5/scala-reflect-2.13.5.jar",
+                "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/jline/jline/3.19.0/jline-3.19.0.jar",
+                "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/java/dev/jna/jna/5.3.1/jna-5.3.1.jar"
+            ],
+            "analysis": "/Users/wade/Documents/CS/scala-discuz/play-scalajs/client/target/streams/test/bloopAnalysisOut/_global/streams/inc_compile_2.13.zip",
+            "setup": {
+                "order": "mixed",
+                "addLibraryToBootClasspath": true,
+                "addCompilerToClasspath": false,
+                "addExtraJarsToClasspath": false,
+                "manageBootClasspath": true,
+                "filterLibraryFromClasspath": true
+            }
+        },
+        "java": {
+            "options": [
+                
+            ]
+        },
+        "test": {
+            "frameworks": [
+                {
+                    "names": [
+                        "org.scalacheck.ScalaCheckFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs2.runner.Specs2Framework",
+                        "org.specs2.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.scalatest.tools.Framework",
+                        "org.scalatest.tools.ScalaTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "com.novocode.junit.JUnitFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "munit.Framework"
+                    ]
+                }
+            ],
+            "options": {
+                "excludes": [
+                    
+                ],
+                "arguments": [
+                    
+                ]
+            }
+        },
+        "platform": {
+            "name": "js",
+            "config": {
+                "version": "1.5.1",
+                "mode": "debug",
+                "kind": "none",
+                "emitSourceMaps": false,
+                "jsdom": false,
+                "toolchain": [
+                    
+                ]
+            },
+            "mainClass": [
+                
+            ]
+        },
+        "resolution": {
+            "modules": [
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.13.5",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.5/scala-library-2.13.5.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.5/scala-library-2.13.5-sources.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "javadoc",
+                            "path": "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.5/scala-library-2.13.5-javadoc.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-js",
+                    "name": "scalajs-library_2.13",
+                    "version": "1.5.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scalajs-library_2.13",
+                            "path": "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-library_2.13/1.5.1/scalajs-library_2.13-1.5.1.jar"
+                        },
+                        {
+                            "name": "scalajs-library_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-library_2.13/1.5.1/scalajs-library_2.13-1.5.1-sources.jar"
+                        },
+                        {
+                            "name": "scalajs-library_2.13",
+                            "classifier": "javadoc",
+                            "path": "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-library_2.13/1.5.1/scalajs-library_2.13-1.5.1-javadoc.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-js",
+                    "name": "scalajs-dom_sjs1_2.13",
+                    "version": "1.1.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scalajs-dom_sjs1_2.13",
+                            "path": "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-dom_sjs1_2.13/1.1.0/scalajs-dom_sjs1_2.13-1.1.0.jar"
+                        },
+                        {
+                            "name": "scalajs-dom_sjs1_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-dom_sjs1_2.13/1.1.0/scalajs-dom_sjs1_2.13-1.1.0-sources.jar"
+                        },
+                        {
+                            "name": "scalajs-dom_sjs1_2.13",
+                            "classifier": "javadoc",
+                            "path": "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-dom_sjs1_2.13/1.1.0/scalajs-dom_sjs1_2.13-1.1.0-javadoc.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.13.5",
+                    "configurations": "optional",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.5/scala-library-2.13.5.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.5/scala-library-2.13.5-sources.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "javadoc",
+                            "path": "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.5/scala-library-2.13.5-javadoc.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-js",
+                    "name": "scalajs-test-bridge_2.13",
+                    "version": "1.5.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scalajs-test-bridge_2.13",
+                            "path": "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-test-bridge_2.13/1.5.1/scalajs-test-bridge_2.13-1.5.1.jar"
+                        },
+                        {
+                            "name": "scalajs-test-bridge_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-test-bridge_2.13/1.5.1/scalajs-test-bridge_2.13-1.5.1-sources.jar"
+                        },
+                        {
+                            "name": "scalajs-test-bridge_2.13",
+                            "classifier": "javadoc",
+                            "path": "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-test-bridge_2.13/1.5.1/scalajs-test-bridge_2.13-1.5.1-javadoc.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-js",
+                    "name": "scalajs-test-interface_2.13",
+                    "version": "1.5.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scalajs-test-interface_2.13",
+                            "path": "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.13/1.5.1/scalajs-test-interface_2.13-1.5.1.jar"
+                        },
+                        {
+                            "name": "scalajs-test-interface_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.13/1.5.1/scalajs-test-interface_2.13-1.5.1-sources.jar"
+                        },
+                        {
+                            "name": "scalajs-test-interface_2.13",
+                            "classifier": "javadoc",
+                            "path": "/Users/wade/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.13/1.5.1/scalajs-test-interface_2.13-1.5.1-javadoc.jar"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tags": [
+            "test"
+        ]
+    }
+}
