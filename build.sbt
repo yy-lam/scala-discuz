@@ -14,7 +14,21 @@ lazy val server = project
     pipelineStages := Seq(digest, gzip),
     // triggers scalaJSPipeline when using compile or continuous compilation
     Compile / compile := ((Compile / compile) dependsOn scalaJSPipeline).value,
-    libraryDependencies += guice
+    libraryDependencies ++= Seq(
+      guice,
+      "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test,
+      "com.typesafe.slick" %% "slick" % "3.3.3",
+      "com.typesafe.slick" %% "slick-hikaricp" % "3.3.3",
+      "com.typesafe.slick" %% "slick-codegen" % "3.3.3",
+      "com.typesafe.play" %% "play-slick" % "5.0.0",
+      "com.typesafe.play" %% "play-slick-evolutions" % "5.0.0",
+      "com.typesafe.play" %% "play-json" % "2.8.1",
+      jdbc,
+      "org.postgresql" % "postgresql" % "42.2.18",
+      "com.github.t3hnar" %% "scala-bcrypt" % "4.1",
+      // "org.mindrot" %% "jbcrypt" % "0.4",
+      specs2 % Test
+    )
   )
   .enablePlugins(PlayScala)
   .dependsOn(shared.jvm)
@@ -22,7 +36,9 @@ lazy val server = project
 lazy val client = project
   .settings(
     scalaJSUseMainModuleInitializer := true,
-    libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "1.1.0"
+    libraryDependencies ++= Seq(
+      "org.scala-js" %%% "scalajs-dom" % "1.1.0"
+    )
   )
   .enablePlugins(ScalaJSPlugin, ScalaJSWeb)
   .dependsOn(shared.js)

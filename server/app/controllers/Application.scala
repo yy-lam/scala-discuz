@@ -1,7 +1,7 @@
 package controllers
 
 import com.example.playscalajs.shared.SharedMessages
-import model.InMemoryModel
+import models.InMemoryModel
 import play.api.data.Form
 import play.api.data.Forms._
 import play.api.mvc._
