@@ -7,12 +7,17 @@ import play.api.data.Forms._
 import play.api.mvc._
 
 import javax.inject._
+import play.api.db.slick._
+import scala.concurrent.ExecutionContext
+import slick.driver.JdbcProfile
+import slick.jdbc.PostgresProfile.api._
 
 // handling submission: https://www.playframework.com/documentation/2.8.x/ScalaForms
 case class UserData(username: String, password: String)
 
 @Singleton
-class Application @Inject()(val controllerComponents: MessagesControllerComponents) extends MessagesBaseController {
+class Application @Inject()(protected val dbConfigProvider: DatabaseConfigProvider, val controllerComponents: MessagesControllerComponents)(implicit ec: ExecutionContext)
+  extends MessagesBaseController with HasDatabaseConfigProvider[JdbcProfile]{
 
   def index = Action { implicit request =>
     Ok(views.html.index(SharedMessages.itWorks))
