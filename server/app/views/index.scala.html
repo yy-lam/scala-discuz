@@ -5,6 +5,15 @@
 <ul>
   <li>Play shouts out: <em>@message</em></li>
   <li>Scala.js shouts out: <em id="scalajsShoutOut"></em></li>
-  <li><a href="@routes.Application.load">load class</a></li>
+  <!-- <li><a href="@routes.Application.load">load class</a></li> -->
 </ul>
+<button id="load-classes">Load classes</button>
+<ul id = "classes"></ul>
+
+<script>
+  list = document.getElementById("classes");
+  $("#load-classes").click(function () {
+    $("#classes").load("/load");
+  });
+</script>
 }

@@ -83,8 +83,8 @@ class Application @Inject()(protected val dbConfigProvider: DatabaseConfigProvid
 
   def load = Action { implicit request =>
     request.session.get("username") match {
-      case Some(username: String) => Ok(views.html.allClasses(username, InMemoryModel.getClasses(username)))
-      case None => Redirect("login")
+      case Some(username: String) => Ok("Loading classes...")// Ok(InMemoryModel.getClasses(username))
+      // case None => OK("Please login first");
     }
   }
 
