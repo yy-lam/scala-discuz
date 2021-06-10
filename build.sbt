@@ -23,7 +23,6 @@ lazy val server = project
       "com.typesafe.play" %% "play-slick" % "5.0.0",
       "com.typesafe.play" %% "play-slick-evolutions" % "5.0.0",
       "com.typesafe.play" %% "play-json" % "2.8.1",
-      jdbc,
       "org.postgresql" % "postgresql" % "42.2.18",
       "com.github.t3hnar" %% "scala-bcrypt" % "4.1",
       // "org.mindrot" %% "jbcrypt" % "0.4",

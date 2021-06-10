@@ -1,7 +1,7 @@
 package models
 
 import slick.jdbc.PostgresProfile.api._
-import scala.collection.mutable.Map
+import scala.collection.mutable
 import scala.concurrent.ExecutionContext
 
 class DatabaseModel(db: Database)(implicit ec: ExecutionContext) {
