@@ -14,14 +14,15 @@ import slick.jdbc.PostgresProfile.api._
 
 // handling submission: https://www.playframework.com/documentation/2.8.x/ScalaForms
 case class UserData(username: String, password: String)
+case class ClassData(classId: String)
 
 @Singleton
 class Application @Inject()(protected val dbConfigProvider: DatabaseConfigProvider, val controllerComponents: MessagesControllerComponents)(implicit ec: ExecutionContext)
   extends MessagesBaseController with HasDatabaseConfigProvider[JdbcProfile]{
 
-  def index = Action { implicit request =>
-    Ok(views.html.index(SharedMessages.itWorks))
-  }
+  val classSelectForm = Form(mapping(
+    "Class" -> text
+  )(ClassData.apply)(ClassData.unapply))
 
   val loginForm = Form(mapping(
     "Username" -> text,
@@ -32,6 +33,10 @@ class Application @Inject()(protected val dbConfigProvider: DatabaseConfigProvid
     "Username" -> text(3, 12),
     "Password" -> text(6)
   )(UserData.apply)(UserData.unapply))
+
+  def index = Action { implicit request =>
+    Ok(views.html.index(SharedMessages.itWorks, classSelectForm))
+  }
 
   def login() = Action { implicit request =>
     Ok(views.html.login(loginForm, signupForm))
@@ -84,7 +89,7 @@ class Application @Inject()(protected val dbConfigProvider: DatabaseConfigProvid
   def load = Action { implicit request =>
     request.session.get("username") match {
       case Some(username: String) => Ok("Loading classes...")// Ok(InMemoryModel.getClasses(username))
-      // case None => OK("Please login first");
+      case None => Ok("Please login first")
     }
   }
 
@@ -93,5 +98,14 @@ class Application @Inject()(protected val dbConfigProvider: DatabaseConfigProvid
       case Some(username: String) => Ok(views.html.classPage(classId))
       case None => Redirect("login")
     }
+  }
+
+  def emptyCall = Action { Ok("It works") }
+
+  def validateClassSelectForm = Action { implicit request =>
+    classSelectForm.bindFromRequest.fold(
+      formWithErrors => BadRequest, // f := formsWithErrors
+      classData => Redirect(routes.Application.goToClass(classData.classId.toInt))
+    )
   }
 }

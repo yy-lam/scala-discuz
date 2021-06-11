@@ -1,19 +1,26 @@
-@(message: String)(implicit flash: Flash)
+@(message: String, classSelectForm: Form[ClassData])(implicit messages: Messages, flash: Flash)
 
-@main("Play with Scala.js") {
-<h2>Play and Scala.js share a same message</h2>
+@main("Scala-Discuz!") {
+<h2>Scala-Discuz!</h2>
 <ul>
   <li>Play shouts out: <em>@message</em></li>
   <li>Scala.js shouts out: <em id="scalajsShoutOut"></em></li>
   <!-- <li><a href="@routes.Application.load">load class</a></li> -->
 </ul>
-<button id="load-classes">Load classes</button>
-<ul id = "classes"></ul>
+
+@helper.form(action=routes.Application.validateClassSelectForm) {
+  @* helper.CSRF.formField *@
+  @helper.select(classSelectForm("Class"), 
+                 options = List("15213" -> "Introduction to Computer Systems", "40" -> "Machine Structures", "105" -> "Programming Languages"),
+                 '_default -> "-- Select Class --"
+                )
+}
+
+<div id="class-content"></div>
 
 <script>
-  list = document.getElementById("classes");
-  $("#load-classes").click(function () {
-    $("#classes").load("/load");
+  document.getElementById("Class").addEventListener("change", function(){
+    $("#class-content").load("/class/" + document.getElementById("Class").value);
   });
 </script>
 }

@@ -11,6 +11,9 @@ POST       /createUserForm               controllers.Application.createUserForm
 GET        /logout                       controllers.Application.logout()
 GET        /class/:classId               controllers.Application.goToClass(classId: Int)
 
+GET        /empty                        controllers.Application.emptyCall
+POST       /validateClassSelectForm      controllers.Application.validateClassSelectForm
+
 # Prefix must match `play.assets.urlPrefix`
 GET        /assets/*file                 controllers.Assets.at(file)
 GET        /versionedAssets/*file        controllers.Assets.versioned(path="/public", file: Asset)
