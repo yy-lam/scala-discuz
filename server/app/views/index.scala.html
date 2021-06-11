@@ -1,20 +1,21 @@
-@(message: String, classSelectForm: Form[ClassData])(implicit messages: Messages, flash: Flash)
+@(message: String, classSelectForm: Form[ClassData], userClasses: Seq[(String, String)])(implicit messages: Messages, flash: Flash)
 
 @main("Scala-Discuz!") {
 <h2>Scala-Discuz!</h2>
 <ul>
   <li>Play shouts out: <em>@message</em></li>
   <li>Scala.js shouts out: <em id="scalajsShoutOut"></em></li>
-  <!-- <li><a href="@routes.Application.load">load class</a></li> -->
 </ul>
 
 @helper.form(action=routes.Application.validateClassSelectForm) {
   @* helper.CSRF.formField *@
   @helper.select(classSelectForm("Class"), 
-                 options = List("15213" -> "Introduction to Computer Systems", "40" -> "Machine Structures", "105" -> "Programming Languages"),
+                 options = userClasses,
                  '_default -> "-- Select Class --"
                 )
 }
+
+<a href="@routes.Application.login">Login</a>
 
 <div id="class-content"></div>
 

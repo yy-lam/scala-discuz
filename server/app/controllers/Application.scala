@@ -35,7 +35,11 @@ class Application @Inject()(protected val dbConfigProvider: DatabaseConfigProvid
   )(UserData.apply)(UserData.unapply))
 
   def index = Action { implicit request =>
-    Ok(views.html.index(SharedMessages.itWorks, classSelectForm))
+    request.session.get("username") match {
+      case Some(username: String) => Ok(views.html.index(SharedMessages.itWorks, classSelectForm, InMemoryModel.getClasses(username)))
+      case None => Ok(views.html.index(SharedMessages.itWorks, classSelectForm, Seq[(String, String)]()))
+    }
+    
   }
 
   def login() = Action { implicit request =>
